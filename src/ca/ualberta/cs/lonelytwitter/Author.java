@@ -1,11 +1,13 @@
 package ca.ualberta.cs.lonelytwitter;
 
-import ca.ualberta.cs.lonelytwiter.User;
+import java.io.IOException;
+
+
 
 
 public class Author extends User implements Userlike
 {
-	public Author(String string){
+	public Author(String string) throws IOException{
 		
 		super(string);
 		

@@ -1,10 +1,12 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import java.util.ArrayList;
+
 
 public class Following extends User implements Follows
 {
-	User userWhoFollows = new User();
-	ArrayList<User> FollowList = new ArrayList<User>; 
+	//User userWhoFollows = new User();
+	ArrayList<User> FollowList; 
 	
 	
 	public void setFollowList( ArrayList<User> listOfFollowers){

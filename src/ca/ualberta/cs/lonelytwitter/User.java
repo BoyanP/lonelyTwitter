@@ -1,5 +1,7 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import java.io.IOException;
+
 //test class?
 
 
@@ -20,7 +22,7 @@ public abstract class User
 
 	//attributes should almost always be private (because of encapsulation)
 		
-	public User(String name) //it is the constructor. You can tell because class name and this method name are the same. 
+	public User(String name) throws IOException //it is the constructor. You can tell because class name and this method name are the same. 
 	{
 
 		super();
@@ -44,7 +46,7 @@ public abstract class User
 
 
 
-	public abstract void setName(String name) throws IOException
+	public void setName(String name) throws IOException
 	{
 	
 		this.name = name;

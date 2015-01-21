@@ -23,10 +23,9 @@ public class TweetMessage implements Tweet
 		
 		
 	}
-	
-	
-	
-	
+
+
+
 	
 	
 	

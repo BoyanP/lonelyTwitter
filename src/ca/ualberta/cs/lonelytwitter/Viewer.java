@@ -1,7 +1,9 @@
 package ca.ualberta.cs.lonelytwitter;
 
+import java.io.IOException;
 
-public class Viewer extends user
+
+public class Viewer extends User
 {
 
 	public void setName(String name) throws IOException{

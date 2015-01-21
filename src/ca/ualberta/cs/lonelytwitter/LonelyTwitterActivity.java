@@ -40,7 +40,7 @@ public class LonelyTwitterActivity extends Activity {
 				setResult(RESULT_OK);
 				String text = bodyText.getText().toString();
 				saveInFile(text, new Date(System.currentTimeMillis()));
-				finish();
+				//finish();
 
 			}
 		});
@@ -50,9 +50,10 @@ public class LonelyTwitterActivity extends Activity {
 	protected void onStart() {
 		// TODO Auto-generated method stub
 		
-		User u = new Author("Tim Magoo");
+		//User u = new Author("Tim Magoo");
 		
-		private String AuthorName = u.getName();
+		//private String AuthorName = u.getName();
+		/*
 		try{
 			u.setName("Othername");
 		} 
@@ -60,9 +61,9 @@ public class LonelyTwitterActivity extends Activity {
 			
 			
 		}
-		
-		ArrayList<UserLike> users = new ArrayList<UserLike>(); 
-		ArrayList<Object> objects; 
+		*/
+		//ArrayList<User> users = new ArrayList<User>(); 
+		//ArrayList<Object> objects; 
 		
 		
 		
