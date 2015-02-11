@@ -4,12 +4,15 @@ import android.app.Activity;
 import android.app.Instrumentation;
 import android.test.ActivityInstrumentationTestCase2;
 import android.test.ViewAsserts;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.TextView;
+import ca.ualberta.cs.lonelytwitter.IntentReaderActivity;
 import ca.ualberta.cs.lonelytwitter.LonelyTwitterActivity;
 import ca.ualberta.cs.lonelytwitter.NormalTweetModel;
+import ca.ualberta.cs.lonelytwitter.R;
 
 /*
  * generate this class with new.. JUnit Test Case
@@ -33,6 +36,24 @@ public class LonelyTwitterActivityUITest extends
 
 		textInput = ((EditText) activity.findViewById(ca.ualberta.cs.lonelytwitter.R.id.body));
 	}
+	
+	public void testSettingText(){
+		
+		instrumentation.runOnMainSync(new Runnable(){
+			
+			@Override
+			public void run(){
+				textInput.setText("Text");
+				
+			}
+		});
+		instrumentation.waitForIdleSync();
+		
+		assertEquals("Text?", "Text",textInput.getText().toString());
+		
+	}
+	
+
 	
 	/*
 	 * fills in the input text field and clicks the 'save'

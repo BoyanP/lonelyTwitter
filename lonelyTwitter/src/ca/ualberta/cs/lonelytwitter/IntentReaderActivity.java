@@ -1,7 +1,9 @@
 package ca.ualberta.cs.lonelytwitter;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.widget.TextView;
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 
@@ -9,7 +11,8 @@ public class IntentReaderActivity extends Activity {
 
 	public static final String TEXT_KEY = "TEXT";
 	public static final String TRANSFORM_KEY = "TRANSFORM";
-
+	public static final String DEFAULT_MESSAGE ="I am so default.";
+	
 	public static final int NORMAL = 1;
 	public static final int REVERSE = 2;
 	public static final int DOUBLE = 3;
@@ -21,10 +24,24 @@ public class IntentReaderActivity extends Activity {
 		return text;
 	}
 	
+	@SuppressLint("NewApi")
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_intent_reader);
+
+		TextView textView = (TextView) findViewById(R.id.intentText);		
+		Intent thing = getIntent();
+		mode = thing.getIntExtra(TRANSFORM_KEY, DOUBLE);
+		text = transformText(thing.getStringExtra(TEXT_KEY));
+		if(text.isEmpty()){
+			
+			text = DEFAULT_MESSAGE;
+			
+		}
+		Log.d("text", "mode is : " + mode);
+		textView.setText(text);
+		
 	}
 	
 	public String transformText(String text) {
